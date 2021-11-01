@@ -1,7 +1,7 @@
 import sys
 import unittest
 
-sys.path.append("/Users/joes/Desktop/Toy Robot Simulator")
+sys.path.append("/Users/joes/Desktop/Toy-Robot-Simulator")
 print(sys.path)
 
 from toy_robot_sim.app.controller.validation_controller import validate_move

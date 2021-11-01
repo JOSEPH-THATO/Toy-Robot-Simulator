@@ -27,9 +27,9 @@ Toy-Robot-Simulator
 
 ## Setting up and Running the project
 
-### export PYTHONPATH=/Users/joes/Desktop/Toy Robot Simulator
+### export PYTHONPATH=/Users/joes/Desktop/Toy-Robot-Simulator
 or
-### edit sys.path.append("/Users/joes/Desktop/Toy Robot Simulator") to your project path
+### edit sys.path.append("/Users/joes/Desktop/Toy-Robot-Simulator") to your project path
 
 ### Installing pre-requisites
 The project uses pip-tool to manage dependencies and it also utilize a Makefile that can be found at the root of the project.

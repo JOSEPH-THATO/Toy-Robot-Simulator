@@ -3,7 +3,7 @@
 
 import sys
 import click
-sys.path.append("/Users/joes/Desktop/Toy Robot Simulator")
+sys.path.append("/Users/joes/Desktop/Toy-Robot-Simulator")
 
 from toy_robot_sim.app.constants import Constants
 from toy_robot_sim.app.controller.move_controller import MoveController
