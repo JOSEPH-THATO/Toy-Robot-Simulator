@@ -55,6 +55,12 @@ class TestMoveController(unittest.TestCase):
         self.assertEqual(y_co, 1)
         self.assertEqual(face, "SOUTH")
 
+    def test_calculate_move_with_none_command(self):
+        commands = None
+        controller = MoveController(commands)
+        response = controller.calculate_move()
+        self.assertEqual(response, None)
+
     def test_calculate_move_with_valid_west_turn(self):
         commands = [
             "PLACE 2,2,WEST",
@@ -69,4 +75,43 @@ class TestMoveController(unittest.TestCase):
         x_co, y_co, face = controller.calculate_move()
         self.assertEqual(x_co, 1)
         self.assertEqual(y_co, 1)
+        self.assertEqual(face, "NORTH")
+
+    def test_example_1(self):
+        commands = [
+            "PLACE 0,0,NORTH",
+            "MOVE",
+            "REPORT"
+        ]
+        controller = MoveController(commands)
+        x_co, y_co, face = controller.calculate_move()
+        self.assertEqual(x_co, 0)
+        self.assertEqual(y_co, 1)
+        self.assertEqual(face, "NORTH")
+
+    def test_example_2(self):
+        commands = [
+            "PLACE 0,0,NORTH",
+            "LEFT",
+            "REPORT"
+        ]
+        controller = MoveController(commands)
+        x_co, y_co, face = controller.calculate_move()
+        self.assertEqual(x_co, 0)
+        self.assertEqual(y_co, 0)
+        self.assertEqual(face, "WEST")
+
+    def test_example_3(self):
+        commands = [
+            "PLACE 1,2,EAST",
+            "MOVE",
+            "MOVE",
+            "LEFT",
+            "MOVE",
+            "REPORT"
+        ]
+        controller = MoveController(commands)
+        x_co, y_co, face = controller.calculate_move()
+        self.assertEqual(x_co, 3)
+        self.assertEqual(y_co, 3)
         self.assertEqual(face, "NORTH")

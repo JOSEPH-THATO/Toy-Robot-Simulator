@@ -14,18 +14,19 @@ class MoveController:
     def calculate_move(self):
         """Calculate robot move
         """
-        for command in self.commands:
-            if "PLACE" in command:
-                self._get_position(command)
+        if self.commands:
+            for command in self.commands:
+                if "PLACE" in command:
+                    self._get_position(command)
 
-            if command == Constants.MOVE:
-                self._make_a_move()
+                if command == Constants.MOVE:
+                    self._make_a_move()
 
-            if command in [Constants.LEFT, Constants.RIGHT]:
-                self._rotate_robot(command)
+                if command in [Constants.LEFT, Constants.RIGHT]:
+                    self._rotate_robot(command)
 
-            if command == Constants.REPORT:
-                return self.x_co, self.y_co, self.direction
+                if command == Constants.REPORT:
+                    return self.x_co, self.y_co, self.direction
         return None
 
     def _get_position(self, command):
